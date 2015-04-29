@@ -291,7 +291,9 @@ function latdown() { if (lat>0.001) lat-=0.1;recalc();}
 function pole()    {                lat=1.0;recalc();}
 function eqtr()    {                lat=0.0;recalc();}
 
-Math.sign = Math.sign || Math.Sign;
+Math.sign = Math.sign || function(x) {
+  return x>0 ? x : -x;
+};
 
 var toplot = orbs.Y3dz2;
 function scaled(x,y,z) {
