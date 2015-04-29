@@ -9,9 +9,7 @@
         }
         if (!gl) 
             alert("Could not initialise WebGL, sorry :-(");
-//        ext = getExtension("ANGLE_instanced_arrays");
-//        if (!ext) 
-//            alert("Could not initialise WebGL's instancing, sorry :-(");
+        return gl;  
     }
 
     function getShader(gl, id) {
