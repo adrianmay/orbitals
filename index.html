@@ -242,28 +242,28 @@ var orbs = {
   Y5px: ["5p<sub>x</sub>", function(x,y,z,r2) { var ro2 = 4*r2/25; var ro = Math.sqrt(ro2); var r = ro/2*5; return 1.732*oh.R5p(ro2,ro)*x/r; }],
   Y5py: ["5p<sub>y</sub>", function(x,y,z,r2) { var ro2 = 4*r2/25; var ro = Math.sqrt(ro2); var r = ro/2*5; return 1.732*oh.R5p(ro2,ro)*y/r; }],
 
-  Y3dz2: ["3d<sub>z<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 1.118 * oh.R3d(ro2,ro) * (2*z*z-x*x-y*y)/r2; }],
-  Y3dxy: ["3d<sub>xy</sub>", function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 3.873 * oh.R3d(ro2,ro) * x*y/r2; }], //root 15
-  Y3dxz: ["3d<sub>xz</sub>", function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 3.873 * oh.R3d(ro2,ro) * x*z/r2; }], //root 15
-  Y3dyz: ["3d<sub>yz</sub>", function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 3.873 * oh.R3d(ro2,ro) * y*z/r2; }], //root 15
-  Y3dx2y2: ["3d<sub>x<sup>2</sup>-y<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 1.9365 * oh.R3d(ro2,ro) * (x*x-y*y)/r2; }], //root (15/4)
+  Y3dz2: ["3d<sub>z<sup>2</sup></sub>",                 function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 1.118 * oh.R3d(ro2,ro) * (2*z*z-x*x-y*y)/r2; }],
+  Y3dxy: ["3d<sub>xy</sub>",                            function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 3.873 * oh.R3d(ro2,ro) * x*y/r2; }], //root 15
+  Y3dxz: ["3d<sub>xz</sub>",                            function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 3.873 * oh.R3d(ro2,ro) * x*z/r2; }], //root 15
+  Y3dyz: ["3d<sub>yz</sub>",                            function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 3.873 * oh.R3d(ro2,ro) * y*z/r2; }], //root 15
+  Y3dx2y2: ["3d<sub>x<sup>2</sup>-y<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = 4*r2/9; var ro = Math.sqrt(ro2); return 1.9365* oh.R3d(ro2,ro) * (x*x-y*y)/r2; }], //root (15/4)
 
-  Y4dz2: ["4d<sub>z<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 1.118 * oh.R4d(ro2,ro) * (2*z*z-x*x-y*y)/r2; }],
-  Y4dxy: ["4d<sub>xy</sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 3.873 * oh.R4d(ro2,ro) * x*y/r2; }], //root 15
-  Y4dxz: ["4d<sub>xz</sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 3.873 * oh.R4d(ro2,ro) * x*z/r2; }], //root 15
-  Y4dyz: ["4d<sub>yz</sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 3.873 * oh.R4d(ro2,ro) * y*z/r2; }], //root 15
-  Y4dx2y2: ["4d<sub>x<sup>2</sup>-y<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 1.9365 * oh.R4d(ro2,ro) * (x*x-y*y)/r2; }], //root (15/4)
+  Y4dz2: ["4d<sub>z<sup>2</sup></sub>",                 function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 1.118 * oh.R4d(ro2,ro) * (2*z*z-x*x-y*y)/r2; }],
+  Y4dxy: ["4d<sub>xy</sub>",                            function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 3.873 * oh.R4d(ro2,ro) * x*y/r2; }], //root 15
+  Y4dxz: ["4d<sub>xz</sub>",                            function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 3.873 * oh.R4d(ro2,ro) * x*z/r2; }], //root 15
+  Y4dyz: ["4d<sub>yz</sub>",                            function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 3.873 * oh.R4d(ro2,ro) * y*z/r2; }], //root 15
+  Y4dx2y2: ["4d<sub>x<sup>2</sup>-y<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); return 1.9365* oh.R4d(ro2,ro) * (x*x-y*y)/r2; }], //root (15/4)
 
-  Y5dz2: ["5d<sub>z<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 1.118 * oh.R4d(ro2,ro) * (2*z*z-x*x-y*y)/r2; }],
-  Y5dxy: ["5d<sub>xy</sub>", function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 3.873 * oh.R5d(ro2,ro) * x*y/r2; }], //root 15
-  Y5dxz: ["5d<sub>xz</sub>", function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 3.873 * oh.R5d(ro2,ro) * x*z/r2; }], //root 15
-  Y5dyz: ["5d<sub>yz</sub>", function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 3.873 * oh.R5d(ro2,ro) * y*z/r2; }], //root 15
+  Y5dz2: ["5d<sub>z<sup>2</sup></sub>",                 function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 1.118 * oh.R5d(ro2,ro) * (2*z*z-x*x-y*y)/r2; }],
+  Y5dxy: ["5d<sub>xy</sub>",                            function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 3.873 * oh.R5d(ro2,ro) * x*y/r2; }], //root 15
+  Y5dxz: ["5d<sub>xz</sub>",                            function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 3.873 * oh.R5d(ro2,ro) * x*z/r2; }], //root 15
+  Y5dyz: ["5d<sub>yz</sub>",                            function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 3.873 * oh.R5d(ro2,ro) * y*z/r2; }], //root 15
   Y5dx2y2: ["5d<sub>x<sup>2</sup>-y<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2*4/25; var ro = Math.sqrt(ro2); return 1.9365 * oh.R5d(ro2,ro) * (x*x-y*y)/r2; }], //root (15/4)
 
-  Y4fz3:  ["4f<sub>z<sup>3</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 1.322 * oh.R4f(ro2,ro) * z/r2/r*(5*z*z-3*r*r); }], 
-  Y4fx3:  ["4f<sub>x<sup>3</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 1.322 * oh.R4f(ro2,ro) * x/r2/r*(5*x*x-3*r*r); }], 
-  Y4fy3:  ["4f<sub>y<sup>3</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 1.322 * oh.R4f(ro2,ro) * y/r2/r*(5*y*y-3*r*r); }], 
-  Y4fxyz: ["4f<sub>xyz</sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 10.247* oh.R4f(ro2,ro) * x*y*z/r2/r; }], 
+  Y4fz3:  ["4f<sub>z<sup>3</sup></sub>",               function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 1.322  *  oh.R4f(ro2,ro) * z/r2/r*(5*z*z-3*r*r); }], 
+  Y4fx3:  ["4f<sub>x<sup>3</sup></sub>",               function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 1.322  *  oh.R4f(ro2,ro) * x/r2/r*(5*x*x-3*r*r); }], 
+  Y4fy3:  ["4f<sub>y<sup>3</sup></sub>",               function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 1.322  *  oh.R4f(ro2,ro) * y/r2/r*(5*y*y-3*r*r); }], 
+  Y4fxyz: ["4f<sub>xyz</sub>",                         function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 10.247 *  oh.R4f(ro2,ro) * x*y*z/r2/r; }], 
   Y4fx2y2:["4f<sub>x<sup>2</sup>-y<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 10.247/2* oh.R4f(ro2,ro) * z*(x*x-y*y)/r2/r; }], 
   Y4fy2z2:["4f<sub>y<sup>2</sup>-z<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 10.247/2* oh.R4f(ro2,ro) * x*(y*y-z*z)/r2/r; }], 
   Y4fz2x2:["4f<sub>z<sup>2</sup>-x<sup>2</sup></sub>", function(x,y,z,r2) { var ro2 = r2/4; var ro = Math.sqrt(ro2); var r=ro*2; return 10.247/2* oh.R4f(ro2,ro) * y*(z*z-x*x)/r2/r; }], 
@@ -315,7 +315,7 @@ function stuffMenu() {
     var item = document.createElement("li");
     item.innerHTML=orbs[k][0];
     item.setAttribute("onClick", "switchTo('"+k+"');");
-    menus[Math.floor(i/17)].appendChild(item);
+    menus[Math.floor(i/20)].appendChild(item);
     i++;
   }
 }
@@ -352,14 +352,15 @@ ul { list-style-type: none; padding:0; margin:0; }
         <td style="vertical-align:top;"><h4>Hints</h4><ul>
             <li>No WebGL? Bet you're using Chrome.</li>
             <li>Looks random? Zoom out, bigger blobs.</li>
+            <li>The more advanced ones have details hidden in the middle.</li>
             <li>Z orbitals look better from the equator.</li>
             <li>X/Y orbitals look better from the pole.</li>
           </ul>
           <h4>What is this?</h4>
           <p>These are the ways that something spherical and solid can wobble. Each picture is a snapshot where the colour shows which way a part is wobbling and the size of the blob indicates how strongly.
           <p>E.g., in 2p<sub>z</sub> mode, it's mainly the centre that oscillates but the top and bottom halves move in antiphase. In 3p<sub>z</sub>, there's a small core that moves in antiphase with the rest. 
-          <p>An electron is an example. It's actually simpler than something like a bell that physically moves about, because whereas the movement of some part of a bell is a vector, an electron only needs a +ve or -ve real number. Nevertheless, the effect of an atomic nucleus is to bend the surrounding space into a bell on which electrons are the vibrations.
-          
+          <p>An electron is an example. It's actually simpler than something like a bell that physically moves about, because whereas the movement of some part of a bell is a vector, an electron only needs a +ve or -ve real number*. Nevertheless, the effect of an atomic nucleus is to bend the surrounding space into a bell on which electrons are the vibrations.
+          <p style='font-size:small;'>* Generally, they need a complex number, but these are standing waves, so a real will do.</p>
         </td>
     </tr> </table>
     
