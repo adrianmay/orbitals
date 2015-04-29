@@ -6,15 +6,7 @@
 
   <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
   <script type="text/javascript" src="webgl-utils.js"></script>
-  <script type="text/javascript" src="webgl-bp.js"></script>
-
-  <script id="shader-fs" type="x-shader/x-fragment">
-precision mediump float;
-    varying vec4 vColor;
-    void main(void) {
-        gl_FragColor = vColor;//vec4(1.0,0.5,0.0,0.5);
-    }
-  </script>
+  <script type="text/javascript" src="webgl-bp.js"></script> 
 
   <script id="shader-vs" type="x-shader/x-vertex">
     precision mediump float;
@@ -28,7 +20,15 @@ precision mediump float;
     void main(void) {
         gl_Position = uPMatrix * uMVMatrix * uWhere * vec4(aVertexPosition.x,aVertexPosition.y,aVertexPosition.z, uLines?1.0:(1.0/abs(uSize)));
         float sh = sqrt(0.5+0.5*dot(vec3(0.0,-0.707,0.707),normalize(aVertexPosition)));
-    vColor = uLines ? vec4(0.5,0.5,0.5,1.0) : (uSize>0.0 ? vec4(sh,.0,sh,1.0) : vec4(0.0,sh,0.0,1.0));
+        vColor = uLines ? vec4(0.5,0.5,0.5,1.0) : (uSize>0.0 ? vec4(sh,.0,sh,1.0) : vec4(0.0,sh,0.0,1.0));
+    }
+  </script>
+
+  <script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+    varying vec4 vColor;
+    void main(void) {
+        gl_FragColor = vColor;
     }
   </script>
 
@@ -98,13 +98,16 @@ function initBuffers() {
   linesVertexPositionBuffer.itemSize = 3;
   linesVertexPositionBuffer.numItems = lines.length/linesVertexPositionBuffer.itemSize;
 
+  //No point using ANGLE instancing cos it's usually either broken, 
+  // unimplemented or a sham that just does a for loop internally.
+
   var arradius=20.0;
   var arrsp=550.0;
   var arrgap=arrsp/2.0/arradius;
   var rmax2 = 5000;
   var i=0;
   var c30 = 0.866;
-  var atoms=[[0,0,0], [0,0.5,0.5], [0.5,0.5,0], [0.5,0,0.5] ];
+  var atoms=[[0,0,0], [0,0.5,0.5], [0.5,0.5,0], [0.5,0,0.5] ]; //FCC lattice
   for (var x=-arradius; x<=arradius; x++)      
     for (var y=-arradius; y<=arradius; y++)      
       for (var z=-arradius; z<=arradius; z++) 
@@ -158,6 +161,10 @@ function drawScene() {
   }
 }
 
+//Got the formulae from Sheffield University's Orbitron site.
+// Unfortunately the fiddle factors peter out at 5g
+
+//Radial functions:
 var oh = {
   R1s: function (ro2, ro) {
     return 2*Math.exp(-ro/2);
@@ -219,6 +226,7 @@ var oh = {
   root5: 2.236,
 }
 
+//Shameful orgy of copy-pasting...
 var orbs = {
   Y1s: ["1s", function(x,y,z,r2) { var ro2 = 4*r2;   return oh.R1s(ro2,Math.sqrt(ro2)); }],
   Y2s: ["2s", function(x,y,z,r2) { var ro2 = r2;     return oh.R2s(ro2,Math.sqrt(ro2)); }],
@@ -360,7 +368,7 @@ ul { list-style-type: none; padding:0; margin:0; }
           <p>These are the ways that something spherical and solid can wobble. Each picture is a snapshot where the colour shows which way a part is wobbling and the size of the blob indicates how strongly.
           <p>E.g., in 2p<sub>z</sub> mode, it's mainly the centre that oscillates but the top and bottom halves move in antiphase. In 3p<sub>z</sub>, there's a small core that moves in antiphase with the rest. 
           <p>An electron is an example. It's actually simpler than something like a bell that physically moves about, because whereas the movement of some part of a bell is a vector, an electron only needs a +ve or -ve real number*. Nevertheless, the effect of an atomic nucleus is to bend the surrounding space into a bell on which electrons are the vibrations.
-          <p style='font-size:small;'>* Generally, they need a complex number, but these are standing waves, so a real will do.</p>
+          <p style='font-size:small;'>* Generally, they need complex numbers, but these are standing waves, so a real will do.</p>
         </td>
     </tr> </table>
     
